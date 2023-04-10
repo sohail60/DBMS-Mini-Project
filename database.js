@@ -2,7 +2,7 @@ const mysql=require("mysql2");
 const dotenv=require("dotenv");
 dotenv.config();
 
-var con =mysql.createConnection({
+let con =mysql.createConnection({
   host:'127.0.0.1',
   user:'root',
   password:'',
@@ -13,64 +13,66 @@ var con =mysql.createConnection({
   // database:process.env.MYSQL_DATABASE
 });
 
+export default con;
+
 // INSERT
-con.connect(function(err) {
-  if (err){
-    console.log(err);
-    return;
-  } else {
-      console.log("Connected!");
-      let sql = "INSERT INTO student VALUES (name,roll,branch,year)";
-      con.query(sql, function (err, result) {
-        if (err){
-          console.log(err);
-          return;
-        } else {
-        console.log("Result: " + result);
-        }
-      });
-    }
-});
+// con.connect(function(err) {
+//   if (err){
+//     console.log(err);
+//     return;
+//   } else {
+//       console.log("Connected!");
+//       let sql = "INSERT INTO student VALUES (name,roll,branch,year)";
+//       con.query(sql, function (err, result) {
+//         if (err){
+//           console.log(err);
+//           return;
+//         } else {
+//         console.log("Result: " + result);
+//         }
+//       });
+//     }
+// });
 
 // UPDATE
-con.connect(function(err) {
-  if (err){
-    console.log(err);
-    return;
-  } else {
-      console.log("Connected!");
-      let sql = "INSERT INTO student VALUES (name,roll,branch,year)";
-      con.query(sql, function (err, result) {
-        if (err){
-          console.log(err);
-          return;
-        } else {
-        console.log("Result: " + result);
-        }
-      });
-    }
-});
+// con.connect(function(err) {
+//   if (err){
+//     console.log(err);
+//     return;
+//   } else {
+//       console.log("Connected!");
+//       let sql = "INSERT INTO student VALUES (name,roll,branch,year)";
+//       con.query(sql, function (err, result) {
+//         if (err){
+//           console.log(err);
+//           return;
+//         } else {
+//         console.log("Result: " + result);
+//         }
+//       });
+//     }
+// });
 
 
 // DELETE
 
-con.connect(function(err) {
-  if (err){
-    console.log(err);
-    return;
-  } else {
-      console.log("Connected!");
-      let sql = "DELETE FROM student WHERE roll = '--'";
-      con.query(sql, function (err, result) {
-        if (err){
-          console.log(err);
-          return;
-        } else {
-        console.log("Result: " + result);
-        }
-      });
-    }
-});
+// con.connect(function(err) {
+//   if (err){
+//     console.log(err);
+//     return;
+//   } else {
+//       console.log("Connected!");
+//       let sql = "DELETE FROM student WHERE roll = '--'";
+//       con.query(sql, function (err, result) {
+//         if (err){
+//           console.log(err);
+//           return;
+//         } else {
+//         console.log("Result: " + result);
+//         }
+//       });
+//     }
+// });
 
 
 // async function getNotes(){
