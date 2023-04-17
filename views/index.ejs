@@ -1,15 +1,61 @@
-<%- include('head') %>
 <%- include('header') %>
 
 <main>
-    <div id="table">
-        <ul id="details">
-            <li>Name</li>
-            <li>Roll No</li>
-            <li>Branch</li>
-            <li>Year</li>
-        </ul>
+  <div id="table">
+    <ul id="details-heading">
+      <li>Name</li>
+      <li>Roll No</li>
+      <li>Branch</li>
+      <li class="right-margin">Year</li>
+      <!-- <span>D</span> -->
+    </ul>
+    
+    <!-- insert-form -->
+    <div id="box">
+        <% for (let i=0; i<list.length; i++){ %>
+            <form action="/delete" method="post">
+                <div class="subbox">
+                    <div class="details">
+                        <p><%= list[i].Name %></p>
+                        <p><%= list[i].Roll %></p>
+                        <p><%= list[i].Branch %></p>
+                        <p><%= list[i].Year %></p>
+                    </div>
+                    <div class="buttons">
+                        <input type="checkbox" name="delete" value="2" onchange="this.form.submit()">
+                        <!-- <input type="image" src="../public/delete.svg" alt="Submit" width="48" height="48" name="delete" value="<%= list[i].Roll %>" onclick="this.form.submit()"> -->
+                        <!-- <input type="image" src="../public/update.svg" alt="Submit" width="48" height="48" onclick="this.form.submit()"> -->
+                    </div>
+                </div>
+            </form>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <form action='/submit' method='POST' class="input">
+            <ul>
+                <li><input type="text" name="name" placeholder="Enter Name" autocomplete="off"></li>
+                <li><input type="text" name="roll" placeholder="Enter Roll" autocomplete="off"></li>
+                <li><input type="text" name="branch" placeholder="Enter Branch" autocomplete="off"></li>
+                <li><input type="number" name="year" placeholder="Enter Year" autocomplete="off"></li>
+            </ul>
+            <button type='submit' class="option" id="insert">Insert</button>
+        </form>
+        
+        <form action='/update' method='POST' class="input">
+            <ul>
+                <li><input type="text" name="name" placeholder="Enter Name" autocomplete="off"></li>
+                <li><input type="text" name="roll" placeholder="Enter Roll" autocomplete="off"></li>
+                <li><input type="text" name="branch" placeholder="Enter Branch" autocomplete="off"></li>
+                <li><input type="number" name="year" placeholder="Enter Year" autocomplete="off"></li>
+            </ul>
+            <button type='submit' class="option" id="update">Update</button>
+        </form>
     </div>
 </main>
 
 <%- include('form') %>
+<%- include('footer') %>
+
+<script type="text/javascript" src="../public/server.js"></script>
