@@ -22,9 +22,8 @@
                         <p><%= list[i].Year %></p>
                     </div>
                     <div class="buttons">
-                        <input type="checkbox" name="delete" value="2" onchange="this.form.submit()">
-                        <!-- <input type="image" src="../public/delete.svg" alt="Submit" width="48" height="48" name="delete" value="<%= list[i].Roll %>" onclick="this.form.submit()"> -->
-                        <!-- <input type="image" src="../public/update.svg" alt="Submit" width="48" height="48" onclick="this.form.submit()"> -->
+                        <input type="image" src="delete.svg" id="delete-icon" alt="Submit" width="40" height="40" onclick="this.form.submit()">
+                        <input type="hidden" name="delete" value="<%= list[i].Roll %>" >
                     </div>
                 </div>
             </form>

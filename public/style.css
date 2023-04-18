@@ -27,6 +27,7 @@ header{
 
 header h1{
     font-size: 80px;
+    color: white;
     margin: 5px;
     padding: 0 px;
 }
@@ -76,23 +77,28 @@ main{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    flex-direction: column;
-    border: 2px solid red;
-}
-
-.buttons{
-
+    /* flex-direction: column; */
+    /* border: 2px solid red; */
 }
 
 .details{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
     padding: 0px;
+    width: 100%;
     font-weight: bold;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+    /* border: 2px solid red; */
 }
 
 .input-container{
@@ -145,8 +151,16 @@ input:focus {
 
 #delete{
     background-color: #fe0000c5;
+    margin-left: 25px;
+}
+
+#delete-icon{
+    color: red;
+    background-color: red;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
 .right-margin{
-    margin-right: 80px;
+    margin-right: 25px;
 }
